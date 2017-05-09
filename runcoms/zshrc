@@ -1,13 +1,23 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# The following lines were added by compinstall
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+zstyle ':completion:*' group-name ''
+zstyle ':completion:*' list-colors ''
+zstyle ':completion:*' menu select=20
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+zstyle ':completion:*' verbose true
+zstyle :compinstall filename '/home/vagrant/.zshrc'
 
-# Customize to your needs...
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+setopt autocd
+bindkey -v
+# End of lines configured by zsh-newuser-install
+source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
+[ -s "/Users/karlfrazier/.scm_breeze/scm_breeze.sh" ] && source "/Users/karlfrazier/.scm_breeze/scm_breeze.sh"
