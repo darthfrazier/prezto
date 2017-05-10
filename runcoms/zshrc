@@ -22,5 +22,6 @@ alias box='cd /Users/karlfrazier/dev-vagrant/vmware; vagrant ssh'
 alias vagrant='cd /Users/karlfrazier/dev-vagrant/vmware; /usr/bin/vagrant $1'
 alias update_zsh='cd ~/.zprezto; git pull; cd -; zsh'
 alias identity='cd /srv/nerdwallet/identity.nerdwallet'
+alias venv='cd /srv/nerdwallet/identity.nerdwallet; . venv/bin/activate; cd -;'
 
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
