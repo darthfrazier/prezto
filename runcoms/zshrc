@@ -1,11 +1,11 @@
 # The following lines were added by compinstall
 
-zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
-zstyle ':completion:*' group-name ''
-zstyle ':completion:*' list-colors ''
-zstyle ':completion:*' menu select=20
-zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
-zstyle ':completion:*' verbose true
+# zstyle ':completion:*' completer _expand _complete _ignored _correct _approximate
+# zstyle ':completion:*' group-name ''
+# zstyle ':completion:*' list-colors ''
+# zstyle ':completion:*' menu select
+# zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+# zstyle ':completion:*' verbose true
 zstyle :compinstall filename '/home/vagrant/.zshrc'
 
 autoload -Uz compinit
@@ -18,7 +18,15 @@ SAVEHIST=1000
 setopt autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
+
+# aliasi niga
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+alias ls='ls -GFh'
+alias dev='cd /srv/nerdwallet'
+alias box='cd /Users/karlfrazier/dev-vagrant/vmware; vagrant ssh'
+alias vagrant='cd /Users/karlfrazier/dev-vagrant/vmware; /usr/bin/vagrant $1'
+alias update_zsh='cd ~/.zprezto; git pull'
+
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 [ -s "/Users/karlfrazier/.scm_breeze/scm_breeze.sh" ] && source "/Users/karlfrazier/.scm_breeze/scm_breeze.sh"
