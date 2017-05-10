@@ -18,6 +18,7 @@ SAVEHIST=1000
 setopt autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
+alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 [ -s "/Users/karlfrazier/.scm_breeze/scm_breeze.sh" ] && source "/Users/karlfrazier/.scm_breeze/scm_breeze.sh"
