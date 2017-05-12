@@ -14,14 +14,29 @@ setopt autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+# zsh stuff
+alias edit_zsh='vim ~/.zshrc'
+alias update_zsh='cd ~/.zprezto; git pull; cd -; zsh'
+alias source_zsh='source ~/.zshrc'
+
 # aliasi niga
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 alias ls='ls -GFh'
+
+### NERDWALLET ###
+# identity stuff
 alias dev='cd /srv/nerdwallet'
 alias box='cd /Users/karlfrazier/dev-vagrant/vmware; vagrant ssh'
 alias vagrant='cd /Users/karlfrazier/dev-vagrant/vmware; /usr/bin/vagrant $1'
-alias update_zsh='cd ~/.zprezto; git pull; cd -; zsh'
 alias identity='cd /srv/nerdwallet/identity.nerdwallet'
 alias venv='cd /srv/nerdwallet/identity.nerdwallet; . venv/bin/activate; cd -;'
 
+# vagrant supervisor
+alias ss='sudo supervisorctl'
+alias sskill='sudo supervisorctl stop all'
+alias ssi='sudo supervisorctl start identity'
+alias ssri='sudo supervisorctl restart identity'
+
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+
+[ -s "/Users/karlfrazier/.scm_breeze/scm_breeze.sh" ] && source "/Users/karlfrazier/.scm_breeze/scm_breeze.sh"
