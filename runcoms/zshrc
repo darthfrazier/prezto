@@ -18,6 +18,7 @@ bindkey -v
 alias edit_zsh='vim ~/.zshrc'
 alias update_zsh='cd ~/.zprezto; git pull; cd -; zsh'
 alias source_zsh='source ~/.zshrc'
+alias zp='cd ~/.zprezto'
 
 # aliasi niga
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
@@ -30,6 +31,10 @@ alias box='cd /Users/karlfrazier/dev-vagrant/vmware; vagrant ssh'
 alias vagrant='cd /Users/karlfrazier/dev-vagrant/vmware; /usr/bin/vagrant $1'
 alias identity='cd /srv/nerdwallet/identity.nerdwallet'
 alias venv='cd /srv/nerdwallet/identity.nerdwallet; . venv/bin/activate; cd -;'
+
+# migrations
+alias rd='cd /srv/nerdwallet/identity.nerdwallet; make drop_db_schema_force; make migrate; cd -'
+alias dd='cd /srv/nerdwallet/identity.nerdwallet; make drop_db_schema_force; cd -'
 
 # vagrant supervisor
 alias ss='sudo supervisorctl'
