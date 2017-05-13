@@ -64,13 +64,13 @@ function prompt_paradox_end_segment {
 
 function prompt_paradox_build_prompt {
   _header_specials='%(?::%F{red}✘ )%(!:%F{yellow}⚡ :)%(1j:%F{blue}⚙ :)'
-  _header_end='%n%F{red}@%F{green}%m%f'
+  _header_end='%n%F{red}@%F{15}%m%f'
 
   _username_color='NONE'
   if [[ $USERNAME == 'vagrant' ]]; then
-    _username_color='%F{blue}'
-  else
     _username_color='%F{green}'
+  else
+    _username_color='%F{15}'
   fi
 
   prompt_paradox_start_segment black default $_header_specials$_username_color$_header_end
