@@ -96,10 +96,13 @@ function prompt_sorin_setup {
   add-zsh-hook precmd prompt_sorin_precmd
 
   _cue_color='NONE'
+  _ssh_info='NONE'
   if [[ $USERNAME == 'vagrant' ]]; then
     _cue_color='%F{2}'
+    _ssh_info=''
   else
     _cue_color='%F{4}'
+    _ssh_info=${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}
   fi
 
   # Set editor-info parameters.
@@ -127,7 +130,7 @@ function prompt_sorin_setup {
     'status' '$(coalesce "%b" "%p" "%c")%s%A%B%S%a%d%m%r%U%u'
 
   # Define prompts.
-  PROMPT='%F{7}%n%F{1}@%F{7}%m ${SSH_TTY:+"%F{9}%n%f%F{7}@%f%F{3}%m%f "}%F{7}${_prompt_sorin_pwd}%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
+  PROMPT='%F{7}%n%F{1}@%F{7}%m $_ssh_info%F{7}${_prompt_sorin_pwd}%(!. %B%F{1}#%f%b.)${editor_info[keymap]} '
   RPROMPT=''
   SPROMPT='zsh: correct %F{1}%R%f to %F{2}%r%f [nyae]? '
 }
