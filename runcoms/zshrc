@@ -42,6 +42,8 @@ alias sskill='sudo supervisorctl stop all'
 alias ssi='sudo supervisorctl start identity'
 alias ssri='sudo supervisorctl restart identity'
 
+# git stuff
+alias rebdev='git checkout develop; git pull; git checkout -; git rebase develop':
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 
 [ -s "/Users/karlfrazier/.scm_breeze/scm_breeze.sh" ] && source "/Users/karlfrazier/.scm_breeze/scm_breeze.sh"
