@@ -14,6 +14,10 @@ setopt autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+# vim config
+export KEYTIMEOUT=10
+bindkey -M viins 'jk' vi-cmd-mode
+
 # zsh stuff
 alias edit_zsh='vim ~/.zshrc'
 alias update_zsh='cd ~/.zprezto; git pull; cd -; zsh'
