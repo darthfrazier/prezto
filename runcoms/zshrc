@@ -14,6 +14,16 @@ setopt autocd
 bindkey -v
 # End of lines configured by zsh-newuser-install
 
+# GOPATH
+export GOPATH=$HOME/Documents/Programming/go
+PATH=$PATH:$GOPATH/bin
+
+# The next line updates PATH for the Google Cloud SDK.
+source /Users/Darthfrazier/google-cloud-sdk/path.zsh.inc
+
+# The next line enables zsh completion for gcloud.
+source /Users/Darthfrazier/google-cloud-sdk/completion.zsh.inc
+
 # zsh stuff
 alias edit_zsh='vim ~/.zshrc'
 alias update_zsh='cd ~/.zprezto; git pull; cd -; zsh'
