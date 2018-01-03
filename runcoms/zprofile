@@ -3,6 +3,7 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Karl Frazier
 #
 
 #
@@ -17,8 +18,8 @@ fi
 # Editors
 #
 
-export EDITOR='nano'
-export VISUAL='nano'
+export EDITOR='emacs'
+export VISUAL='emacs'
 export PAGER='less'
 
 #
@@ -32,6 +33,11 @@ fi
 #
 # Paths
 #
+
+
+# Go config
+export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
 
 # Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path

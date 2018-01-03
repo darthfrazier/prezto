@@ -16,7 +16,6 @@ bindkey -v
 
 # vim config
 export KEYTIMEOUT=10
-bindkey -M viins 'jk' vi-cmd-mode
 
 # zsh stuff
 alias edit_zsh='vim ~/.zshrc'
@@ -28,26 +27,8 @@ alias zp='cd ~/.zprezto'
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 alias ls='ls -GFh'
 
-### NERDWALLET ###
-# identity stuff
-alias dev='cd /srv/nerdwallet'
-alias box='cd /Users/karlfrazier/dev-vagrant/vmware; vagrant ssh'
-alias vagrant='cd /Users/karlfrazier/dev-vagrant/vmware; /usr/bin/vagrant $1'
-alias identity='cd /srv/nerdwallet/identity.nerdwallet'
-alias venv='cd /srv/nerdwallet/identity.nerdwallet; . venv/bin/activate; cd -;'
+# Env specific config
+[ -f ~/.nw_zsh/nw_alias ] && source ~/.nw_zsh/nw_alias
+[ -f ~/.nw_zsh/nw_script ] && source ~/.nw_zsh/nw_script
 
-# migrations
-alias rd='cd /srv/nerdwallet/identity.nerdwallet; make drop_db_schema_force; make migrate; cd -'
-alias dd='cd /srv/nerdwallet/identity.nerdwallet; make drop_db_schema_force; cd -'
-
-# vagrant supervisor
-alias ss='sudo supervisorctl'
-alias sskill='sudo supervisorctl stop all'
-alias ssi='sudo supervisorctl start identity'
-alias ssri='sudo supervisorctl restart identity'
-
-# git stuff
-alias rebdev='git checkout develop; git pull; git checkout -; git rebase develop':
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-
-[ -s "/Users/karlfrazier/.scm_breeze/scm_breeze.sh" ] && source "/Users/karlfrazier/.scm_breeze/scm_breeze.sh"
