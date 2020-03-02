@@ -34,10 +34,12 @@ spacemacs() {
     emacsclient -t
 }
 
-### ENV SPECIFIC CONFIG ###
-[ -f ~/.nw_zsh/nw_alias ] && source ~/.nw_zsh/nw_alias
-[ -f ~/.nw_zsh/nw_script ] && source ~/.nw_zsh/nw_script
+# Quick utils
+
+# Load remote workspace
+start() {
+  gcert
+  ssh frazierk.mtv.corp.google.com
+}
 
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-
-[ -s "/Users/karlfrazier/.scm_breeze/scm_breeze.sh" ] && source "/Users/karlfrazier/.scm_breeze/scm_breeze.sh"
